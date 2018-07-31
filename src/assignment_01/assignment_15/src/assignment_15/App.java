@@ -19,8 +19,25 @@ public class App {
 	 */
 	
 	public static int longestStreak(String str) {
-		return 0;
-	}
+		   int strLength = str.length();
+		   
+		   if (strLength==0) return 0;
+		   
+		   int count = 0;
+		   char lastChar = 0;
+		   int maxCount = 0;
+		   
+		   for (int i=0; i<strLength; i++){
+		      if (str.charAt(i)==lastChar) {
+		         count++;
+		         if (maxCount<count) maxCount = count;
+		      }
+		      else count = 0;
+		      lastChar = str.charAt(i);
+		   }
+		   maxCount++;
+		   return maxCount;
+		}
 
 	
 	

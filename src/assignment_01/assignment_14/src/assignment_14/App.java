@@ -21,8 +21,24 @@ public class App {
 	 */
 	
 	public static int matchingChar(String[] a, String[] b) {
-		return 0;
-	}
+		int count=0;
+		for(int i=0;i<b.length;i++) {
+			String first=a[i];
+			String second=b[i];
+			if(!first.equals("")&&!second.equals("")) {
+				if(first.charAt(0)==second.charAt(0)) {
+					count++;
+				}
+			}
+			
+		}
+		
+		
+		
+		return count;
+		}
+	
+	
 
 	
 	
