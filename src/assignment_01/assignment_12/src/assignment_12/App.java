@@ -19,33 +19,25 @@ public class App {
 	 */
 	
 	public static String starKill(String str) {
-//int n=str.length();
-//		int star_id =str.indexOf("*");
-//		String pre=str.substring(0, star_id-1);
-//		String post=str.substring(star_id+2,n);
-//		String main_s=pre+post;
-//		
-//	
-//	return main_s;
-//	}
-
+int len =str.length();
+String result = "";
+for(int i=0;i<len;i++) {
+	if(i==0&&str.charAt(i)!='*') 
+		result+=str.charAt(i);
 	
-		int n= str.length();
-		int idx = str.indexOf("*");
-		String first =str.substring(0,idx-1);
-		String second= str.substring(idx+2,n);
-		String res = first+second;
-	return res;
+	 if(i>0&&str.charAt(i)!='*'&&str.charAt(i-1)!='*') 
+		result+=str.charAt(i);
+	
+	 if(i>0&&str.charAt(i)=='*'&&str.charAt(i-1)!='*') 
+		result=result.substring(0, result.length()-1);
+	
+	
+}
+return result;
+		
+		
+		
 	}
-   
-	
-	
-	
-	
-	
-	
-
-	
 	//----------------------STARTING POINT OF PROGRAM. IGNORE BELOW --------------------//
 	public static void main(String args[]){
 		TestingUtils.runTests();
